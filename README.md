@@ -11,8 +11,6 @@ npm install @tnlake/tn-ng-lib
 npx tn-init-l10n
 ```
 
-> **Note**: Due to npm's security restrictions, postinstall scripts from dependencies don't run automatically. You must run `npx tn-init-l10n` to create your project's `src/l10n.yml` file.
-
 ## Modules
 
 ### L10n Module
@@ -32,10 +30,10 @@ import { L10nModule } from '@tnlake/tn-ng-lib';
 export class AppModule { }
 ```
 
-2. The library automatically creates a sample `l10n.yml` file in your project's `assets` folder during installation (if it doesn't exist). You can customize it as needed:
+2. Create a `l10n.yml` file in your project's `src` folder (using `npx tn-init-l10n`). You can customize it as needed:
 
 ```yaml
-# assets/l10n.yml
+# src/l10n.yml
 # Project-specific translations (will be merged with library defaults)
 CUSTOM_MESSAGE:
   ja: カスタムメッセージ
