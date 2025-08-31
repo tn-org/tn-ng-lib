@@ -10,6 +10,7 @@ import {
 
 @Component({
   selector: 'l10n',
+  standalone: false,
   template: `
     {{ text | l10n : args }}
     <span #content>

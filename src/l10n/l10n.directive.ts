@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs';
 
 @Directive({
   selector: '[l10n]',
+  standalone: false,
 })
 export class L10nDirective implements OnInit, OnDestroy, AfterViewInit {
   @Input('l10n') values?: Record<string, any> | string = {};

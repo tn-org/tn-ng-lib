@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 @Pipe({
   name: 'l10n',
   pure: false,
+  standalone: false,
 })
 export class L10nPipe implements PipeTransform {
   private value = '';

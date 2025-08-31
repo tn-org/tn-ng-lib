@@ -9,8 +9,8 @@
     "src/scripts"
   ],
   "scripts": {
-    "build": "tsc",
-    "build:watch": "tsc --watch",
+    "build": "ng-packagr -p ng-package.json",
+    "build:watch": "ng-packagr -p ng-package.json --watch",
     "prepare": "npm run build",
     "build-l10n": "node src/scripts/build-l10n.js",
     "build-l10n:watch": "node src/scripts/build-l10n-watch.js"
@@ -38,6 +38,7 @@
   "devDependencies": {
     "@angular/core": "^20.0.0",
     "@angular/common": "^20.0.0",
+    "ng-packagr": "^20.0.0",
     "typescript": "^5.6.0",
     "@types/node": "^22.0.0",
     "dotenv": "^16.0.0",
