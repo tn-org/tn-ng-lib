@@ -1,0 +1,111 @@
+# Default localization for tn-ng-lib
+# Common words and phrases
+
+# Basic Actions
+SAVE:
+  ja: 保存
+  en: Save
+CANCEL:
+  ja: キャンセル
+  en: Cancel
+DELETE:
+  ja: 削除
+  en: Delete
+EDIT:
+  ja: 編集
+  en: Edit
+ADD:
+  ja: 追加
+  en: Add
+UPDATE:
+  ja: 更新
+  en: Update
+CONFIRM:
+  ja: 確認
+  en: Confirm
+BACK:
+  ja: 戻る
+  en: Back
+NEXT:
+  ja: 次へ
+  en: Next
+CLOSE:
+  ja: 閉じる
+  en: Close
+
+# Status
+SUCCESS:
+  ja: 成功
+  en: Success
+ERROR:
+  ja: エラー
+  en: Error
+WARNING:
+  ja: 警告
+  en: Warning
+INFO:
+  ja: 情報
+  en: Info
+LOADING:
+  ja: 読み込み中...
+  en: Loading...
+COMPLETED:
+  ja: 完了
+  en: Completed
+
+# Common UI
+LOGIN:
+  ja: ログイン
+  en: Login
+LOGOUT:
+  ja: ログアウト
+  en: Logout
+USERNAME:
+  ja: ユーザー名
+  en: Username
+PASSWORD:
+  ja: パスワード
+  en: Password
+EMAIL:
+  ja: メールアドレス
+  en: Email
+NAME:
+  ja: 名前
+  en: Name
+SEARCH:
+  ja: 検索
+  en: Search
+FILTER:
+  ja: フィルター
+  en: Filter
+SORT:
+  ja: ソート
+  en: Sort
+SETTINGS:
+  ja: 設定
+  en: Settings
+
+# Messages
+NO_DATA:
+  ja: データがありません
+  en: No data available
+REQUIRED:
+  ja: 必須項目です
+  en: Required field
+INVALID_EMAIL:
+  ja: メールアドレスの形式が正しくありません
+  en: Invalid email format
+PASSWORD_REQUIRED:
+  ja: パスワードを入力してください
+  en: Password is required
+
+# Confirmation
+CONFIRM_DELETE:
+  ja: 削除してもよろしいですか？
+  en: Are you sure you want to delete?
+CONFIRM_SAVE:
+  ja: 保存してもよろしいですか？
+  en: Are you sure you want to save?
+UNSAVED_CHANGES:
+  ja: 保存されていない変更があります
+  en: You have unsaved changes

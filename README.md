@@ -27,44 +27,62 @@ import { L10nModule } from 'tn-ng-lib';
 export class AppModule { }
 ```
 
-2. Create `l10n.yml` file in your project's `assets` folder:
+2. Create `l10n.yml` file in your project's `assets` folder (optional):
 
 ```yaml
 # assets/l10n.yml
-EDIT:
-  ja: 編集
-  en: Edit
-DELETE:
-  ja: 削除
-  en: Delete
-  DO:
-    ja: 削除する
-    en: Delete
-WELCOME:
-  ja: ようこそ
-  en: Welcome
-HELLO:
-  ja: こんにちは {name}
-  en: Hello {name}
+# Project-specific translations (will be merged with library defaults)
+CUSTOM_MESSAGE:
+  ja: カスタムメッセージ
+  en: Custom message
+
+# Override library defaults if needed
+SAVE:
+  ja: セーブ  # Override library default "保存"
+  en: Save
+
+# Nested structure example
+USER:
+  PROFILE:
+    ja: プロフィール
+    en: Profile
 ```
+
+**Note**: The library comes with common UI words pre-defined (SAVE, CANCEL, DELETE, etc.). Your project's `l10n.yml` will be merged with these defaults, with your project taking priority for any conflicts.
 
 #### Usage
 
 ```typescript
-// Component
-<l10n [single]="'EDIT'"></l10n>
-<l10n [single]="'DELETE.DO'"></l10n>
-<l10n [single]="'HELLO'" [values]="{name: 'John'}"></l10n>
+// Component - using library defaults
+<l10n [single]="'SAVE'"></l10n>           <!-- "保存" / "Save" -->
+<l10n [single]="'CANCEL'"></l10n>         <!-- "キャンセル" / "Cancel" -->
+<l10n [single]="'CONFIRM_DELETE'"></l10n> <!-- "削除してもよろしいですか？" -->
+
+// Component - using project custom
+<l10n [single]="'CUSTOM_MESSAGE'"></l10n>
+<l10n [single]="'USER.PROFILE'"></l10n>
 
 // Pipe
-{{ 'EDIT' | l10n }}
-{{ 'DELETE.DO' | l10n }}
-{{ 'HELLO' | l10n : {name: 'John'} }}
+{{ 'SAVE' | l10n }}
+{{ 'LOADING' | l10n }}
+{{ 'CUSTOM_MESSAGE' | l10n }}
 
 // Service
 constructor(private l10nService: L10nService) {}
 getText(key: string, args?: any): string
 ```
+
+#### Built-in Translations
+
+The library includes common UI translations for Japanese and English:
+
+- **Basic Actions**: SAVE, CANCEL, DELETE, EDIT, ADD, UPDATE, CONFIRM, etc.
+- **Status Messages**: SUCCESS, ERROR, WARNING, INFO, LOADING, COMPLETED
+- **UI Elements**: LOGIN, LOGOUT, USERNAME, PASSWORD, EMAIL, SEARCH, etc.
+- **Validation**: REQUIRED, INVALID_EMAIL, PASSWORD_REQUIRED
+- **Confirmations**: CONFIRM_DELETE, CONFIRM_SAVE, UNSAVED_CHANGES
+
+See `src/assets/default-l10n.yml` in the library for the complete list.
 
 #### Components
 
