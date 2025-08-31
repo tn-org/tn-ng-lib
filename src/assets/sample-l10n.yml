@@ -1,0 +1,50 @@
+# Sample l10n.yml for your project
+# This file demonstrates how to add custom translations that will be merged with library defaults
+
+# Project-specific messages
+WELCOME_MESSAGE:
+  ja: ようこそ、{name}さん！
+  en: Welcome, {name}!
+
+APP_TITLE:
+  ja: マイアプリ
+  en: My App
+
+# Override library defaults if needed
+# Example: Change "保存" to "セーブ"
+SAVE:
+  ja: 保存
+  en: Save
+  DO:
+    ja: 保存する
+    en: Save it
+
+# Nested structure example
+PROFILE:
+  ja: プロフィール
+  en: Profile
+SETTINGS:
+  ja: ユーザー設定
+  en: User Settings
+
+HOME:
+  ja: ホーム
+  en: Home
+ABOUT:
+  ja: このアプリについて
+  en: About
+
+# Form validation messages
+VALIDATION:
+  NAME_REQUIRED:
+    ja: お名前を入力してください
+    en: Name is required
+  EMAIL_INVALID:
+    ja: 正しいメールアドレスを入力してください
+    en: Please enter a valid email address
+
+# Custom confirmation messages
+CONFIRM:
+  LOGOUT:
+    ja: ログアウトしますか？
+    en: Do you want to logout?

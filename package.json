@@ -18,6 +18,7 @@
     "build": "ng-packagr -p ng-package.json",
     "build:watch": "ng-packagr -p ng-package.json --watch",
     "prepare": "npm run build",
+    "postinstall": "node src/scripts/postinstall.js",
     "build-l10n": "node src/scripts/build-l10n.js",
     "build-l10n:watch": "node src/scripts/build-l10n-watch.js"
   },

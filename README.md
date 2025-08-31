@@ -8,6 +8,8 @@ Angular 20 library for tn-org. A collection of reusable Angular components and s
 npm install tn-ng-lib
 ```
 
+**Note**: The library automatically creates a sample `l10n.yml` file in your `src/assets/` directory during installation if it doesn't already exist.
+
 ## Modules
 
 ### L10n Module
@@ -27,7 +29,7 @@ import { L10nModule } from 'tn-ng-lib';
 export class AppModule { }
 ```
 
-2. Create `l10n.yml` file in your project's `assets` folder (optional):
+2. The library automatically creates a sample `l10n.yml` file in your project's `assets` folder during installation (if it doesn't exist). You can customize it as needed:
 
 ```yaml
 # assets/l10n.yml
