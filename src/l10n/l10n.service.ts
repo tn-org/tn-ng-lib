@@ -13,12 +13,14 @@ export class L10nService {
 
   constructor(private http: HttpClient) {
     // 初期化はAPP_INITIALIZERで行うためコンストラクタでは呼ばない
+    console.log("L10nService constructor");
   }
 
   init(lang: string = this.lang): Promise<any> {
+    console.log(`L10n init called with lang: "${lang}", this.lang: "${this.lang}"`);
     return this.use(lang).then(() => {
       this.initialized = true;
-      console.log(`L10n initialized with language: ${lang}`);
+      console.log(`L10n initialized with language: ${lang}, initialized: ${this.initialized}`);
     });
   }
 
@@ -43,7 +45,7 @@ export class L10nService {
 
   get(key: string, values: any = {}): string {
     if (!this.initialized) {
-      console.warn("L10n service not initialized. Make sure to call initialize() or use APP_INITIALIZER");
+      console.warn(`L10n service not initialized. Key: "${key}", initialized: ${this.initialized}. Make sure to call init() or use APP_INITIALIZER`);
       return key; // 初期化前はキーをそのまま返す
     }
 
