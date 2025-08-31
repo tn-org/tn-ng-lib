@@ -4,14 +4,14 @@ const fs = require("fs");
 const yaml = require("js-yaml");
 const path = require("path");
 
-const sourcePath = "./src/assets/l10n.yml";
+const sourcePath = "./src/l10n.yml";
 const outputDir = "./src/assets/dist/l10n";
 
 // ライブラリのデフォルトl10nファイルのパスを取得
 function getLibraryDefaultPath() {
   try {
     // node_modules内のライブラリを確認
-    const libPath = path.join(process.cwd(), "node_modules", "tn-ng-lib", "src", "assets", "default-l10n.yml");
+    const libPath = path.join(process.cwd(), "node_modules", "@tnlake", "tn-ng-lib", "src", "assets", "default-l10n.yml");
     if (fs.existsSync(libPath)) return libPath;
     
     // ローカル開発時のパス
