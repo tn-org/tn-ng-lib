@@ -5,13 +5,11 @@ Angular 20 library for tn-org. A collection of reusable Angular components and s
 ## Installation
 
 ```bash
-npm install tn-ng-lib
+npm install @tnlake/tn-ng-lib
 
 # Create sample l10n.yml (if not auto-generated)
 npx tn-init-l10n
 ```
-
-**Note**: When installing via Git URL, you may need to manually run `npx tn-init-l10n` to create the sample `l10n.yml` file.
 
 ## Modules
 
@@ -24,7 +22,7 @@ Localization module for internationalization support.
 1. Import the L10nModule in your Angular application:
 
 ```typescript
-import { L10nModule } from 'tn-ng-lib';
+import { L10nModule } from '@tnlake/tn-ng-lib';
 
 @NgModule({
   imports: [L10nModule],
