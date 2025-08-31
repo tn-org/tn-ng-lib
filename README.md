@@ -6,9 +6,12 @@ Angular 20 library for tn-org. A collection of reusable Angular components and s
 
 ```bash
 npm install tn-ng-lib
+
+# Create sample l10n.yml (if not auto-generated)
+npx tn-init-l10n
 ```
 
-**Note**: The library automatically creates a sample `l10n.yml` file in your `src/assets/` directory during installation if it doesn't already exist.
+**Note**: When installing via Git URL, you may need to manually run `npx tn-init-l10n` to create the sample `l10n.yml` file.
 
 ## Modules
 
@@ -103,6 +106,7 @@ The library provides utility scripts that can be run from other projects:
 
 ```bash
 # In your project after installing tn-ng-lib
+npx tn-init-l10n         # Create sample l10n.yml (one-time setup)
 npx tn-build-l10n        # Build l10n files once
 npx tn-build-l10n-watch  # Watch and build l10n files
 
