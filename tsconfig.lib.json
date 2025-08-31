@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/lib",
+    "target": "ES2022",
+    "declaration": true,
+    "declarationMap": true,
+    "inlineSources": true,
+    "types": [],
+    "lib": ["ES2022", "dom"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["src/test.ts", "src/**/*.spec.ts", "jest.config.ts", "src/**/*.test.ts"]
+}

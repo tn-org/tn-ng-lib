@@ -1,7 +1,7 @@
 {
   "name": "tn-ng-lib",
   "version": "1.0.0",
-  "description": "Angular 20 library for tn-org",
+  "description": "Angular library for tn-org",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -9,8 +9,8 @@
     "src/scripts"
   ],
   "scripts": {
-    "build": "tsc",
-    "build:watch": "tsc --watch",
+    "build": "tsc -p tsconfig.lib.json",
+    "build:watch": "tsc -p tsconfig.lib.json --watch",
     "prepare": "npm run build",
     "build-l10n": "node src/scripts/build-l10n.js",
     "build-l10n:watch": "node src/scripts/build-l10n-watch.js"
@@ -32,12 +32,12 @@
   },
   "homepage": "https://github.com/tn-org/tn-ng-lib#readme",
   "peerDependencies": {
-    "@angular/core": "^20.0.0",
-    "@angular/common": "^20.0.0"
+    "@angular/core": ">=18.0.0",
+    "@angular/common": ">=18.0.0"
   },
   "devDependencies": {
-    "@angular/core": "^20.0.0",
-    "@angular/common": "^20.0.0",
+    "@angular/core": "^18.0.0",
+    "@angular/common": "^18.0.0",
     "typescript": "^5.6.0",
     "@types/node": "^22.0.0",
     "dotenv": "^16.0.0",
