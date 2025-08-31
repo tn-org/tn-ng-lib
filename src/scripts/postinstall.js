@@ -5,6 +5,7 @@ const fs = require("fs");
 const path = require("path");
 
 console.log("🔧 tn-ng-lib postinstall setup");
+console.log("📁 Current working directory:", process.cwd());
 
 // srcディレクトリが存在するかチェック（Angularプロジェクトの場合）
 const projectSrcDir = path.join(process.cwd(), "src");
