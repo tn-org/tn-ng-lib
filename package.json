@@ -2,7 +2,8 @@
   "name": "tn-ng-lib",
   "version": "1.0.0",
   "description": "Angular library for tn-org",
-  "main": "dist/index.js",
+  "main": "dist/fesm2022/tn-ng-lib.mjs",
+  "module": "dist/fesm2022/tn-ng-lib.mjs",
   "types": "dist/index.d.ts",
   "files": [
     "dist",
