@@ -1,6 +1,6 @@
 {
   "name": "@tnlake/tn-ng-lib",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Angular library for tnlake",
   "main": "dist/fesm2022/tnlake-tn-ng-lib.mjs",
   "module": "dist/fesm2022/tnlake-tn-ng-lib.mjs",

@@ -113,7 +113,18 @@ npx tn-build-l10n-watch  # Watch and build l10n files
   "scripts": {
     "prebuild": "npx tn-build-l10n",
     "build": "ng build",
-    "dev": "npx tn-build-l10n-watch & ng serve"
+    "start": "npx tn-build-l10n-watch & ng serve",
+    "serve": "npx tn-build-l10n && ng serve"
+  }
+}
+
+# For Windows (use npm-run-all for cross-platform):
+npm install --save-dev npm-run-all
+{
+  "scripts": {
+    "start": "npm-run-all --parallel l10n:watch serve",
+    "l10n:watch": "npx tn-build-l10n-watch",
+    "serve": "ng serve"
   }
 }
 ```
