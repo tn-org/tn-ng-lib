@@ -2,8 +2,8 @@
   "name": "tn-ng-lib",
   "version": "1.0.0",
   "description": "Angular library for tn-org",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/public-api.js",
+  "types": "dist/public-api.d.ts",
   "files": [
     "dist",
     "src/scripts"
