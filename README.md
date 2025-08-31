@@ -7,9 +7,11 @@ Angular 20 library for tn-org. A collection of reusable Angular components and s
 ```bash
 npm install @tnlake/tn-ng-lib
 
-# Create sample l10n.yml (if not auto-generated)
+# Initialize l10n files (required)
 npx tn-init-l10n
 ```
+
+> **Note**: Due to npm's security restrictions, postinstall scripts from dependencies don't run automatically. You must run `npx tn-init-l10n` to create your project's `src/l10n.yml` file.
 
 ## Modules
 

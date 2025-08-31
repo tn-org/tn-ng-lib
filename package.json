@@ -1,6 +1,6 @@
 {
   "name": "@tnlake/tn-ng-lib",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Angular library for tnlake",
   "main": "dist/fesm2022/tn-ng-lib.mjs",
   "module": "dist/fesm2022/tn-ng-lib.mjs",
@@ -20,6 +20,7 @@
     "build:watch": "ng-packagr -p ng-package.json --watch",
     "prepare": "npm run build",
     "postinstall": "node src/scripts/postinstall.js",
+    "install": "node src/scripts/postinstall.js",
     "build-l10n": "node src/scripts/build-l10n.js",
     "build-l10n:watch": "node src/scripts/build-l10n-watch.js"
   },
