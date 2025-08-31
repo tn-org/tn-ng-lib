@@ -5,6 +5,10 @@
   "main": "dist/fesm2022/tn-ng-lib.mjs",
   "module": "dist/fesm2022/tn-ng-lib.mjs",
   "types": "dist/index.d.ts",
+  "bin": {
+    "tn-build-l10n": "src/scripts/build-l10n.js",
+    "tn-build-l10n-watch": "src/scripts/build-l10n-watch.js"
+  },
   "files": [
     "dist",
     "src/scripts"

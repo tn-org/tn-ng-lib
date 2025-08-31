@@ -83,15 +83,15 @@ The library provides utility scripts that can be run from other projects:
 
 ```bash
 # In your project after installing tn-ng-lib
-npx tn-ng-lib build-l10n        # Build l10n files once
-npx tn-ng-lib build-l10n:watch  # Watch and build l10n files
+npx tn-build-l10n        # Build l10n files once
+npx tn-build-l10n-watch  # Watch and build l10n files
 
 # Or add to your project's package.json scripts:
 {
   "scripts": {
-    "prebuild": "npx tn-ng-lib build-l10n",
+    "prebuild": "npx tn-build-l10n",
     "build": "ng build",
-    "dev": "npx tn-ng-lib build-l10n:watch & ng serve"
+    "dev": "npx tn-build-l10n-watch & ng serve"
   }
 }
 ```

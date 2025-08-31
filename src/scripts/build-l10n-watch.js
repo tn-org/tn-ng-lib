@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // scripts/watch-l10n.js
 const chokidar = require("chokidar");
 const { exec } = require("child_process");
