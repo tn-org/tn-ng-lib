@@ -6,5 +6,6 @@
   },
   "allowedNonPeerDependencies": [
     "js-yaml"
-  ]
+  ],
+  "keepLifecycleScripts": true
 }
