@@ -30,10 +30,13 @@ import { L10nModule } from '@tnlake/tn-ng-lib';
 export class AppModule { }
 ```
 
-2. Create a `l10n.yml` file in your project's `src` folder (using `npx tn-init-l10n`). You can customize it as needed:
+2. Create `l10n.yml` files in your project's `src` folder (using `npx tn-init-l10n`). You can now organize translations modularly:
 
+**Multiple Files Support**: Place `l10n.yml` files anywhere in `src/` directory for modular organization.
+
+**Basic Setup:**
 ```yaml
-# src/l10n.yml
+# src/l10n.yml (global translations)
 # Project-specific translations (will be merged with library defaults)
 CUSTOM_MESSAGE:
   ja: カスタムメッセージ
@@ -51,7 +54,28 @@ USER:
     en: Profile
 ```
 
-**Note**: The library comes with common UI words pre-defined (SAVE, CANCEL, DELETE, etc.). Your project's `l10n.yml` will be merged with these defaults, with your project taking priority for any conflicts.
+**Modular Organization with Namespaces:**
+```yaml
+# src/pages/mypage/l10n.yml
+namespace: MYPAGE
+TITLE:
+  ja: マイページ  
+  en: My Page
+SETTINGS:
+  ja: 設定
+  en: Settings
+
+# src/components/form/l10n.yml  
+namespace: FORM
+VALIDATION:
+  REQUIRED:
+    ja: 必須項目です
+    en: This field is required
+```
+
+This creates JSON keys like: `MYPAGE.TITLE`, `FORM.VALIDATION.REQUIRED`
+
+**Note**: The library comes with common UI words pre-defined (SAVE, CANCEL, DELETE, etc.). Your project's `l10n.yml` files will be merged with these defaults, with your project taking priority for any conflicts.
 
 #### Usage
 

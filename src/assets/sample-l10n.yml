@@ -1,5 +1,10 @@
 # Sample l10n.yml for your project
-# This file demonstrates how to add custom translations that will be merged with library defaults
+# NEW: Multiple l10n.yml files are now supported!
+# Place l10n.yml files anywhere in src/ directory for modular organization
+
+# OPTIONAL: Define namespace to group translations
+# Example: namespace: MYPAGE creates MYPAGE.TITLE in final JSON
+# namespace: MYPAGE
 
 # Project-specific messages
 WELCOME_MESSAGE:
@@ -48,3 +53,13 @@ CONFIRM:
   LOGOUT:
     ja: ログアウトしますか？
     en: Do you want to logout?
+
+# ===== MODULAR ORGANIZATION EXAMPLES =====
+# Instead of putting everything in one file, you can organize like this:
+#
+# src/l10n.yml (global/common translations)
+# src/pages/home/l10n.yml (with "namespace: HOME")
+# src/pages/profile/l10n.yml (with "namespace: PROFILE") 
+# src/components/form/l10n.yml (with "namespace: FORM")
+#
+# This creates JSON keys like: HOME.TITLE, PROFILE.SETTINGS, FORM.VALIDATION.REQUIRED

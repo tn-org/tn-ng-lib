@@ -4,8 +4,36 @@ const fs = require("fs");
 const yaml = require("js-yaml");
 const path = require("path");
 
-const sourcePath = "./src/l10n.yml";
 const outputDir = "./src/assets/dist/l10n";
+
+// src内のすべてのl10n.ymlファイルを検索
+function findL10nFiles(dir = "./src") {
+  const files = [];
+  
+  function scanDirectory(currentDir) {
+    try {
+      const entries = fs.readdirSync(currentDir, { withFileTypes: true });
+      
+      for (const entry of entries) {
+        const fullPath = path.join(currentDir, entry.name);
+        
+        if (entry.isDirectory()) {
+          // node_modules, .git, dist などのディレクトリは除外
+          if (!entry.name.startsWith('.') && entry.name !== 'node_modules' && entry.name !== 'dist') {
+            scanDirectory(fullPath);
+          }
+        } else if (entry.name === 'l10n.yml') {
+          files.push(fullPath);
+        }
+      }
+    } catch (error) {
+      // アクセス権限エラーなどは無視
+    }
+  }
+  
+  scanDirectory(dir);
+  return files;
+}
 
 // ライブラリのデフォルトl10nファイルのパスを取得
 function getLibraryDefaultPath() {
@@ -43,6 +71,22 @@ function deepMerge(library, project) {
   return merged;
 }
 
+// namespace付きでYAMLデータを処理する関数
+function processYamlWithNamespace(yamlContent) {
+  const data = yaml.load(yamlContent);
+  
+  // namespaceが定義されている場合
+  if (data && data.namespace && typeof data.namespace === 'string') {
+    const namespace = data.namespace;
+    const { namespace: _, ...content } = data; // namespaceプロパティを除外
+    
+    // namespaceでラップ
+    return { [namespace]: content };
+  }
+  
+  return data || {};
+}
+
 // YAMLファイルを読み込み、マージする
 let yamlData = {};
 
@@ -58,22 +102,31 @@ if (defaultPath) {
   }
 }
 
-// 2. プロジェクトのl10n.ymlを読み込んでマージ
-if (fs.existsSync(sourcePath)) {
+// 2. すべてのプロジェクトl10n.ymlファイルを検索・読み込み
+const l10nFiles = findL10nFiles();
+console.log(`📁 Found ${l10nFiles.length} l10n.yml file(s):`);
+
+for (const filePath of l10nFiles) {
+  console.log(`   ${filePath}`);
+  
   try {
-    const projectData = yaml.load(fs.readFileSync(sourcePath, "utf8"));
-    yamlData = deepMerge(yamlData, projectData);
-    console.log("✔ Merged with project l10n.yml");
+    const yamlContent = fs.readFileSync(filePath, "utf8");
+    const processedData = processYamlWithNamespace(yamlContent);
+    yamlData = deepMerge(yamlData, processedData);
+    console.log(`   ✔ Merged ${path.relative(process.cwd(), filePath)}`);
   } catch (error) {
-    console.error("✗ Error reading project l10n.yml:", error.message);
-    process.exit(1);
+    console.error(`   ✗ Error reading ${filePath}:`, error.message);
   }
-} else {
+}
+
+// ファイルが見つからない場合のチェック
+if (l10nFiles.length === 0) {
   if (Object.keys(yamlData).length === 0) {
-    console.error("✗ No l10n.yml found and no library defaults available");
+    console.error("✗ No l10n.yml files found and no library defaults available");
+    console.log("   Run 'npx tn-init-l10n' to create a sample file");
     process.exit(1);
   }
-  console.log("ℹ No project l10n.yml found, using library defaults only");
+  console.log("ℹ No project l10n.yml files found, using library defaults only");
 }
 
 // 言語コード検出
