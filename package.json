@@ -1,6 +1,6 @@
 {
   "name": "@tnlake/tn-ng-lib",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Angular library for tnlake",
   "main": "dist/fesm2022/tnlake-tn-ng-lib.mjs",
   "module": "dist/fesm2022/tnlake-tn-ng-lib.mjs",
@@ -38,6 +38,60 @@
     "url": "https://github.com/tn-org/tn-ng-lib/issues"
   },
   "homepage": "https://github.com/tn-org/tn-ng-lib#readme",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/fesm2022/tnlake-tn-ng-lib.mjs"
+    },
+    "./l10n": {
+      "types": "./dist/l10n/index.d.ts",
+      "default": "./dist/l10n/fesm2022/tnlake-tn-ng-lib-l10n.mjs"
+    },
+    "./ion-core": {
+      "types": "./dist/ion-core/index.d.ts",
+      "default": "./dist/ion-core/fesm2022/tnlake-tn-ng-lib-ion-core.mjs"
+    },
+    "./ion-card": {
+      "types": "./dist/ion-card/index.d.ts",
+      "default": "./dist/ion-card/fesm2022/tnlake-tn-ng-lib-ion-card.mjs"
+    },
+    "./ion-fab": {
+      "types": "./dist/ion-fab/index.d.ts",
+      "default": "./dist/ion-fab/fesm2022/tnlake-tn-ng-lib-ion-fab.mjs"
+    },
+    "./ion-form": {
+      "types": "./dist/ion-form/index.d.ts",
+      "default": "./dist/ion-form/fesm2022/tnlake-tn-ng-lib-ion-form.mjs"
+    },
+    "./ion-grid": {
+      "types": "./dist/ion-grid/index.d.ts",
+      "default": "./dist/ion-grid/fesm2022/tnlake-tn-ng-lib-ion-grid.mjs"
+    },
+    "./ion-infinite-scroll": {
+      "types": "./dist/ion-infinite-scroll/index.d.ts",
+      "default": "./dist/ion-infinite-scroll/fesm2022/tnlake-tn-ng-lib-ion-infinite-scroll.mjs"
+    },
+    "./ion-list": {
+      "types": "./dist/ion-list/index.d.ts",
+      "default": "./dist/ion-list/fesm2022/tnlake-tn-ng-lib-ion-list.mjs"
+    },
+    "./ion-menu": {
+      "types": "./dist/ion-menu/index.d.ts",
+      "default": "./dist/ion-menu/fesm2022/tnlake-tn-ng-lib-ion-menu.mjs"
+    },
+    "./ion-overlay": {
+      "types": "./dist/ion-overlay/index.d.ts",
+      "default": "./dist/ion-overlay/fesm2022/tnlake-tn-ng-lib-ion-overlay.mjs"
+    },
+    "./ion-segment": {
+      "types": "./dist/ion-segment/index.d.ts",
+      "default": "./dist/ion-segment/fesm2022/tnlake-tn-ng-lib-ion-segment.mjs"
+    },
+    "./ion-tab": {
+      "types": "./dist/ion-tab/index.d.ts",
+      "default": "./dist/ion-tab/fesm2022/tnlake-tn-ng-lib-ion-tab.mjs"
+    }
+  },
   "peerDependencies": {
     "@angular/common": "^20.0.0",
     "@angular/core": "^20.0.0"
