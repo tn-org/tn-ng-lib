@@ -1,6 +1,6 @@
 {
   "name": "@tnlake/tn-ng-lib",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Angular library for tnlake",
   "main": "dist/fesm2022/tnlake-tn-ng-lib.mjs",
   "module": "dist/fesm2022/tnlake-tn-ng-lib.mjs",
@@ -39,18 +39,19 @@
   },
   "homepage": "https://github.com/tn-org/tn-ng-lib#readme",
   "peerDependencies": {
-    "@angular/core": "^20.0.0",
-    "@angular/common": "^20.0.0"
+    "@angular/common": "^20.0.0",
+    "@angular/core": "^20.0.0"
   },
   "devDependencies": {
-    "@angular/core": "^20.0.0",
     "@angular/common": "^20.0.0",
-    "ng-packagr": "^20.0.0",
-    "typescript": "^5.6.0",
+    "@angular/core": "^20.0.0",
+    "@ionic/angular": "^8.7.3",
     "@types/node": "^22.0.0",
     "dotenv": "^16.0.0",
+    "js-yaml": "^4.1.0",
     "minimist": "^1.2.0",
-    "js-yaml": "^4.1.0"
+    "ng-packagr": "^20.0.0",
+    "typescript": "^5.6.0"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"
