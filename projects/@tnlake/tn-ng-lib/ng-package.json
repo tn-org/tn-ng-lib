@@ -1,0 +1,10 @@
+{
+  "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../dist/@tnlake/tn-ng-lib",
+  "assets": ["./**/assets", "./**/scripts"],
+  "deleteDestPath": false,
+  "keepLifecycleScripts": true,
+  "lib": {
+    "entryFile": "./public-api.ts"
+  }
+}
