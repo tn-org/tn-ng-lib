@@ -12,9 +12,10 @@
   },
   "homepage": "https://github.com/tn-org/tn-ng-lib#readme",
   "bin": {
-    "tn-init-l10n": "l10n/scripts/init-l10n.js",
-    "tn-build-l10n": "l10n/scripts/build-l10n.js",
-    "tn-build-l10n-watch": "l10n/scripts/build-l10n-watch.js"
+    "tn-l10n-init": "l10n/scripts/init-l10n.js",
+    "tn-l10n-build": "l10n/scripts/build-l10n.js",
+    "tn-l10n-watch": "l10n/scripts/build-l10n-watch.js",
+    "tn-update-version": "scripts/update-version.js"
   },
   "peerDependencies": {
     "@angular/common": "^20.2.0",
@@ -24,5 +25,5 @@
     "tslib": "^2.3.0"
   },
   "sideEffects": false,
-  "version": "1.4.0"
+  "version": "1.5.0"
 }
