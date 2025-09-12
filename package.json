@@ -1,9 +1,9 @@
 {
   "name": "@tnlake/tn-ng-lib-builder",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "scripts": {
     "build": "npm run sync-version && rm -rf dist && ng build @tnlake/tn-ng-lib",
-    "update-version": "node projects/@tnlake/tn-ng-lib/scripts/update-version.js",
+    "version-up": "node projects/@tnlake/tn-ng-lib/scripts/update-version.js",
     "sync-version": "node scripts/sync-version.js",
     "prepare": "npm run build",
     "publish": "npm run build && cd dist/@tnlake/tn-ng-lib && npm publish && cd -"
