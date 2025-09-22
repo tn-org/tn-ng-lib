@@ -1,7 +1,9 @@
 import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { inject, Injectable } from "@angular/core";
 import { BehaviorSubject, firstValueFrom, of } from "rxjs";
 import { catchError, tap } from "rxjs/operators";
+
+import { Preferences } from "@capacitor/preferences";
 
 @Injectable({
   providedIn: "root",
@@ -11,7 +13,9 @@ export class L10nService {
   private dictionary$ = new BehaviorSubject<any>({});
   private initialized = false;
 
-  constructor(private http: HttpClient) {
+  private http = inject(HttpClient);
+
+  constructor() {
     // 初期化はAPP_INITIALIZERで行うためコンストラクタでは呼ばない
     console.log("L10nService constructor");
   }
@@ -25,7 +29,9 @@ export class L10nService {
   }
 
   use(lang: string) {
-    return firstValueFrom(this.loadLanguage(lang));
+    return firstValueFrom(this.loadLanguage(lang)).then(() => {
+      Preferences.set({ key: "language", value: lang });
+    });
   }
 
   private loadLanguage(lang: string) {
@@ -45,7 +51,9 @@ export class L10nService {
 
   get(key: string, values: any = {}): string {
     if (!this.initialized) {
-      console.warn(`L10n service not initialized. Key: "${key}", initialized: ${this.initialized}. Make sure to call init() or use APP_INITIALIZER`);
+      console.warn(
+        `L10n service not initialized. Key: "${key}", initialized: ${this.initialized}. Make sure to call init() or use APP_INITIALIZER`
+      );
       return key; // 初期化前はキーをそのまま返す
     }
 
@@ -59,6 +67,11 @@ export class L10nService {
 
   getLang() {
     return this.lang;
+  }
+
+  async getStoredLang() {
+    const { value } = await Preferences.get({ key: "language" });
+    return value || this.lang;
   }
 
   private replacePlaceholders(translation: string, values: any): string {
