@@ -1,6 +1,6 @@
 {
   "name": "@tnlake/tn-ng-lib-builder",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "scripts": {
     "build": "npm run sync-version && rm -rf dist && ng build @tnlake/tn-ng-lib",
     "version-up": "node projects/@tnlake/tn-ng-lib/scripts/update-version.js",
@@ -15,7 +15,9 @@
     "@angular/forms": "^20.2.0",
     "@angular/platform-browser": "^20.2.0",
     "@angular/router": "^20.2.0",
+    "@capacitor/app": "^7.1.0",
     "@capacitor/preferences": "^7.0.2",
+    "@capawesome/capacitor-app-update": "^7.0.1",
     "@ionic/angular": "^8.7.3",
     "js-yaml": "^4.1.0",
     "rxjs": "~7.8.0",
