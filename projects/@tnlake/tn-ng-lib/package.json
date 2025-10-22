@@ -30,5 +30,5 @@
     "tslib": "^2.3.0"
   },
   "sideEffects": false,
-  "version": "1.8.0"
+  "version": "1.8.1"
 }

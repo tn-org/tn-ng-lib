@@ -6,7 +6,7 @@ const path = require("path");
 
 const outputDir = "./src/assets/dist/l10n";
 
-// src内のすべてのl10n.ymlファイルを検索
+// src内のすべてのl10n関連YAMLファイルを検索
 function findL10nFiles(dir = "./src") {
   const files = [];
   
@@ -22,7 +22,7 @@ function findL10nFiles(dir = "./src") {
           if (!entry.name.startsWith('.') && entry.name !== 'node_modules' && entry.name !== 'dist') {
             scanDirectory(fullPath);
           }
-        } else if (entry.name === 'l10n.yml') {
+        } else if (entry.name.includes('l10n') && entry.name.endsWith('.yml')) {
           files.push(fullPath);
         }
       }
@@ -102,9 +102,9 @@ if (defaultPath) {
   }
 }
 
-// 2. すべてのプロジェクトl10n.ymlファイルを検索・読み込み
+// 2. すべてのプロジェクトl10nファイルを検索・読み込み
 const l10nFiles = findL10nFiles();
-console.log(`📁 Found ${l10nFiles.length} l10n.yml file(s):`);
+console.log(`📁 Found ${l10nFiles.length} l10n YAML file(s):`);
 
 for (const filePath of l10nFiles) {
   console.log(`   ${filePath}`);
@@ -122,11 +122,11 @@ for (const filePath of l10nFiles) {
 // ファイルが見つからない場合のチェック
 if (l10nFiles.length === 0) {
   if (Object.keys(yamlData).length === 0) {
-    console.error("✗ No l10n.yml files found and no library defaults available");
+    console.error("✗ No l10n YAML files found and no library defaults available");
     console.log("   Run 'npx tn-init-l10n' to create a sample file");
     process.exit(1);
   }
-  console.log("ℹ No project l10n.yml files found, using library defaults only");
+  console.log("ℹ No project l10n YAML files found, using library defaults only");
 }
 
 // 言語コード検出

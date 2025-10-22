@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const { spawn } = require("child_process");
 
-// src内のすべてのl10n.ymlファイルを検索（build-l10n.jsと同じ関数）
+// src内のすべてのl10n関連YAMLファイルを検索（build-l10n.jsと同じ関数）
 function findL10nFiles(dir = "./src") {
   const files = [];
   
@@ -20,7 +20,7 @@ function findL10nFiles(dir = "./src") {
           if (!entry.name.startsWith('.') && entry.name !== 'node_modules' && entry.name !== 'dist') {
             scanDirectory(fullPath);
           }
-        } else if (entry.name === 'l10n.yml') {
+        } else if (entry.name.includes('l10n') && entry.name.endsWith('.yml')) {
           files.push(fullPath);
         }
       }
@@ -35,15 +35,15 @@ function findL10nFiles(dir = "./src") {
 
 const l10nFiles = findL10nFiles();
 
-console.log("👀 Watching for l10n.yml changes...");
-console.log(`📁 Found ${l10nFiles.length} l10n.yml file(s):`);
+console.log("👀 Watching for l10n YAML changes...");
+console.log(`📁 Found ${l10nFiles.length} l10n YAML file(s):`);
 for (const file of l10nFiles) {
   console.log(`   ${file}`);
 }
 
 // ファイル存在チェック
 if (l10nFiles.length === 0) {
-  console.error("❌ No l10n.yml files found in src directory");
+  console.error("❌ No l10n YAML files found in src directory");
   console.log("   Make sure to run 'npx tn-init-l10n' first to create a file.");
   process.exit(1);
 }
@@ -66,7 +66,7 @@ for (const filePath of l10nFiles) {
   });
 }
 
-console.log("✅ Watchers started. Edit any l10n.yml files to trigger rebuild.");
+console.log("✅ Watchers started. Edit any l10n YAML files to trigger rebuild.");
 console.log("   Press Ctrl+C to stop watching.");
 
 // プロセス終了時のクリーンアップ

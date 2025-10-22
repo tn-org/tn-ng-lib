@@ -1,6 +1,6 @@
 {
   "name": "@tnlake/tn-ng-lib-builder",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "scripts": {
     "build": "npm run sync-version && rm -rf dist && ng build @tnlake/tn-ng-lib",
     "version-up": "node projects/@tnlake/tn-ng-lib/scripts/update-version.js",
